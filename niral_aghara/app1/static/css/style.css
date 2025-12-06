@@ -1,0 +1,136 @@
+:root{
+  --c1:#223127;
+  --c2:#9C0D38;
+  --c3:#CE5374;
+  --c4:#DBBBF5;
+  --c5:#DDF0FF;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Active Navbar Link */
+.navbar-nav .nav-link {
+  color: var(--c1);
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+  position: relative;
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:hover {
+  color: var(--c2);
+}
+
+/* Active Link */
+.navbar-nav .nav-link.active {
+  color: var(--c2);
+  font-weight: 700;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--c2);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  border-radius: 2px;
+}
+
+
+/* HEADER */
+.main-header{
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: relative; /* ensures header scrolls with page */
+  top: auto;          /* reset any fixed top */
+  width: 100%;        /* keep full width */
+  z-index: 1;         /* optional, if layering matters */
+}
+
+.navbar-brand span{
+  color: var(--c2);
+  font-weight: 700;
+}
+
+/* HERO */
+.hero{
+  background: linear-gradient(135deg, var(--c2), var(--c3));
+  color: #fff;
+  padding: 120px 0 80px;
+}
+
+.btn-custom{
+  background: var(--c1);
+  border: none;
+  color: #fff;
+}
+
+.btn-outline-custom{
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* SECTION */
+.section{
+  padding: 70px 0;
+}
+
+.section-title{
+  color: var(--c2);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* TEACHER BOX / PHOTO */
+.teacher-box{
+  background: var(--c5);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher-box img {
+  max-width: 200px;  /* controls size */
+  width: 100%;        /* responsive */
+  height: auto;
+  border-radius: 50%; /* circular */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* CARDS */
+.course-card{
+  border: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* CTA */
+.cta{
+  background: linear-gradient(90deg, var(--c4), var(--c5));
+  padding: 40px;
+  border-radius: 16px;
+}
+
+/* FOOTER */
+.main-footer{
+  background: var(--c1);
+  color: #fff;
+}
+
+.main-footer a{
+  color: var(--c5);
+  text-decoration: none;
+}
+
+.nav-logo{
+  height: 70px;
+  width: auto;
+  transform: scale(1.3);
+  padding-right: 7px;  
+}

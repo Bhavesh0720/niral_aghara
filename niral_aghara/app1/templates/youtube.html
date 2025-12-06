@@ -1,0 +1,207 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>YouTube Videos by Niral Aghara | Learn Spoken English Free</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✅ Primary SEO Meta -->
+  <meta name="description" content="Watch free Spoken English, Grammar, Interview & Exam Preparation videos by Niral Aghara on YouTube. Learn English confidently with real-life examples.">
+  <meta name="keywords" content="Spoken English YouTube, English Trainer Niral Aghara, Learn English Online, Interview English, Grammar Videos, IELTS English, Daily English Practice">
+  <meta name="author" content="Niral Aghara">
+
+  <!-- ✅ Canonical URL -->
+  <link rel="canonical" href="https://yourdomain.com/youtube.html">
+
+  <!-- ✅ Open Graph (Facebook / WhatsApp Preview) -->
+  <meta property="og:title" content="Free English Learning on YouTube | Niral Aghara">
+  <meta property="og:description" content="Daily Spoken English, Grammar & Interview Preparation videos by Niral Aghara. Subscribe and learn English for free.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/youtube.html">
+  <meta property="og:image" content="https://yourdomain.com/static/images/logo2.jpg">
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Learn English Free on YouTube | Niral Aghara">
+  <meta name="twitter:description" content="Watch daily English speaking & grammar videos by expert trainer Niral Aghara.">
+  <meta name="twitter:image" content="https://yourdomain.com/static/images/logo2.jpg">
+
+  <!-- ✅ Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- ✅ Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- ✅ Structured Data (Schema for Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Niral Aghara",
+    "jobTitle": "English Language Trainer",
+    "url": "https://yourdomain.com",
+    "sameAs": [
+      "https://www.youtube.com/@NiralAghara"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Spoken English Training by Niral Aghara",
+    "description": "Free Spoken English and Grammar lessons on YouTube.",
+    "uploadDate": "2025-01-01",
+    "thumbnailUrl": "https://yourdomain.com/static/images/logo2.jpg",
+    "embedUrl": "https://www.youtube.com/@NiralAghara"
+  }
+  </script>
+
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="main-header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                    <img src="{% static 'images/logo2.jpg' %}" alt="Niral Aghara Logo" class="nav-logo">
+                    <span> Niral <span>Aghara</span></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'cources' %}">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="{% url 'youtube' %}">YouTube</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Learn English Free on YouTube</h1>
+            <p class="lead mt-2">Watch daily Spoken English, Grammar & Interview videos</p>
+
+            <a href="https://www.youtube.com/@NiralAghara" target="_blank" class="btn btn-outline-custom btn-lg mt-3">
+                <i class="bi bi-youtube"></i> Subscribe Now
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= CHANNEL EMBED ================= -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Official Niral Aghara YouTube Channel for Spoken English</h2>
+
+            <div class="ratio ratio-16x9 mt-4">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/xICYgxcguEA?si=FPSxtZljmMMtU35w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PLQHjEnCHoZ0yDqpwEOkw2DN412tFvS84-"
+                class="btn btn-custom mt-3" target="_blank">
+                <i class="bi bi-youtube"></i> View Full Playlist on YouTube
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= LATEST VIDEOS ================= -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Most Watched English Learning Videos</h2>
+
+            <div class="row g-4 mt-3">
+
+                <!-- VIDEOS -->
+                {% for videos in popular_videos %}
+                <div class="col-md-4">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="560" height="315"
+                            src="{{ videos.video_url }}"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PLAYLISTS SECTION ================= -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title text-center">Best English Learning Playlists</h2>
+
+            <div class="row text-center mt-4 g-4">
+
+                <!-- PLAYLISTS -->
+                {% for pls in playlists %}
+                <div class="col-md-4">
+                    <div class="course-card p-3">
+                        <h5>{{ pls.title }}</h5>
+
+                        <div class="ratio ratio-16x9 mt-2">
+                            <iframe width="560" height="315"
+                                src="{{ pls.video_url }}"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <a href="{{ pls.playlist_url }}"
+                            target="_blank" class="btn btn-custom mt-2">
+                            ▶ View Playlist
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="https://www.youtube.com/@NiralAghara/playlists"
+                    target="_blank" class="btn btn-custom mt-2">
+                    <h3>▶ View All Playlists</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="section">
+        <div class="container">
+            <div class="cta d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                    <h3>Want to Speak English Confidently?</h3>
+                    <p class="mb-0">Join my YouTube + Online Classes Today</p>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/@NiralAghara" class="btn btn-dark btn-lg" target="_blank">
+                        <i class="bi bi-youtube"></i> Subscribe Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock content %}
